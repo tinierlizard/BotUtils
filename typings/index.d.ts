@@ -38,7 +38,7 @@ export class CommandLogger {
     init(channelId: string, client: Client):Promise<null>
 
 
-    log(int: CommandInteraction, title: string, desc: string, fields: Array<string>):Promise<null>
+    log(int: CommandInteraction, title: string, desc: string, fields: Array<EmbedFieldData>):Promise<null>
 }
 
 /** A class to handle status updates in the terminal. */

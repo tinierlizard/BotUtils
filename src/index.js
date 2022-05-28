@@ -11,4 +11,4 @@ exports.PermCheck = require('./Functions/PermCheck');
 
 // Classes
 exports.Status = require('./Classes/Status');
-exports.Logger = require('./Classes/CommandLogger');
+exports.CommandLogger = require('./Classes/CommandLogger');

@@ -33,9 +33,9 @@ export interface Command{
 export class CommandLogger {
     /**
      * @param {string} channelId The ID of the log channel to send these logs to
-     * @param {discord.Client} client The Bot's client
+     * @param {discord.CommandInteraction} int This command's interaction
      */
-    constructor(channelId: string, client: Client):Promise<null>
+    init(channelId: string, int: CommandInteraction):Promise<CommandLogger>
 
     log(int: CommandInteraction, title: string, desc: string, fields: Array<EmbedFieldData>):Promise<null>
 }
@@ -43,9 +43,9 @@ export class CommandLogger {
 /** A class to handle status updates in the terminal. */
 export class Status {
     /**
-     * @param {Object} cmd The command that this instance of stat should use (just use 'this')
+     * @param {string} cmd The name of the command
      */
-    constructor (cmd:CommandInteraction)
+    constructor (cmd:string)
     /**
      * @description This method will update the console
      * @param {string} msg The message to update the console with

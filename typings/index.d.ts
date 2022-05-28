@@ -1,10 +1,18 @@
 import { ActivityType, ApplicationCommandData, ApplicationCommandOptionData, ButtonInteraction, Client, CommandInteraction, ContextMenuInteraction, EmbedFieldData, Interaction, MessageEmbed, PresenceStatusData } from "discord.js";
 
 // Types \\
-interface commandPerms {
+interface CommandPermissionData {
     id: string,
     type: 'USER' | 'ROLE',
     permission: boolean
+}
+
+interface EmbedData {
+    title: string,
+    description: string,
+    footer?: string,
+    fields?: Array<EmbedFieldData>,
+    color: Array<number> | "RED" | "YELLOW" | "GREEN"
 }
 
 export interface Command{
@@ -14,7 +22,7 @@ export interface Command{
     type: 'NRML' | 'CTX-USR' | 'CTX-MSG',
     defaultPermission: boolean,
     /** Optional if defaultPermission == 'true' */
-    permissions?: Array<commandPerms>,
+    permissions?: Array<CommandPermissionData>,
     options?: Array<ApplicationCommandOptionData>,
     enabled: boolean,
     execute(interaction : CommandInteraction | ContextMenuInteraction | ButtonInteraction, client : Client):null
@@ -70,13 +78,9 @@ export function CreateSlashes(client: Client, directory: string):Promise<Array<A
 /**
  * Using the provided parameters, this function makes a new discord embed and then returns it
  * @param {discord.CommandInteraction} int The command interaction from someone running the command
- * @param {string} title Some title for the embed
- * @param {string} desc Some description for the embed
- * @param {Array<int>} color OPTIONAL - An array with three values, R, G, and B
- * @param {Array<discord.EmbedFieldData} fields OPTIONAL - An array of fields to be added to your embed
- * @param {string} footer OPTIONAL - Some string to put at the bottom of your message. 'empty' results in no footer.
+ * @param {EmbedData} options - An array of options for the embed
  */
-export function Embed(int: CommandInteraction, title: string, desc: string, color?: Array<number>, fields?: Array<EmbedFieldData>, footer?: string ):MessageEmbed;
+export function Embed(int: CommandInteraction, options: EmbedData):MessageEmbed;
 
 /**
  * Get the value of an option from some interaction
@@ -124,4 +128,4 @@ export function Update(client: Client, dir: string):Promise<string>;
  * @param interaction The command interaction associated with this permission check
  * @param Perms An array of permission data
  */
-export function PermCheck(defPerm: boolean, interaction: Interaction, Perms?:Array<commandPerms>):boolean;
+export function PermCheck(defPerm: boolean, interaction: Interaction, Perms?:Array<CommandPermissionData>):boolean;

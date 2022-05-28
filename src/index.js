@@ -2,7 +2,7 @@
 exports.Store = require('./Functions/ManageStorage');
 exports.Client = require('./Functions/MakeClient');
 exports.CreateSlashes = require('./Functions/CreateSlashes');
-exports.StartMsg = require('./Functions/BotMessage');
+exports.BotMessage = require('./Functions/BotMessage');
 exports.Embed = require('./Functions/Embed');
 exports.Update = require('./Functions/UpdateCmds');
 exports.Prompt = require('./Functions/Prompt');

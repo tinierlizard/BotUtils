@@ -1,5 +1,4 @@
 const { CommandInteraction } = require("discord.js");
-const Storage = require('./ManageStorage')
 
 /**
  *

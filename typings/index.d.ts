@@ -35,8 +35,7 @@ export class CommandLogger {
      * @param {string} channelId The ID of the log channel to send these logs to
      * @param {discord.Client} client The Bot's client
      */
-    init(channelId: string, client: Client):Promise<null>
-
+    constructor(channelId: string, client: Client):Promise<null>
 
     log(int: CommandInteraction, title: string, desc: string, fields: Array<EmbedFieldData>):Promise<null>
 }

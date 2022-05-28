@@ -9,6 +9,6 @@ exports.Prompt = require('./Functions/Prompt');
 exports.GetOption = require('./Functions/GetOption');
 exports.PermCheck = require('./Functions/PermCheck');
 
-// Objects
-exports.Status = require('./Objects/Status');
-exports.Logger = require('./Objects/CommandLogger');
+// Classes
+exports.Status = require('./Classes/Status');
+exports.Logger = require('./Classes/CommandLogger');

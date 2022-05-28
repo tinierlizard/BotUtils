@@ -19,7 +19,7 @@ function getColor(color){
         return [0,255,0]
     } else if (color == 'YELLOW'){
         return [255,255,0]
-    } else if (color && typeof(color) == Array){
+    } else {
         return color
     }
 }

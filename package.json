@@ -1,0 +1,22 @@
+{
+  "name": "botutils",
+  "version": "1.0.0",
+  "description": "yeah",
+  "main": "./src/index.js",
+  "types": "./typings/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Equal and Opposite Reaction",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.16.5",
+    "eslint": "^8.5.0"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "discord.js": "^13.5.0",
+    "figlet": "^1.5.2"
+  },
+  "type": "commonjs"
+}

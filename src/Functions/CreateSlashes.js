@@ -72,7 +72,7 @@ async function CreateSlashes (client, directory) {
             }
         }
         
-        await client.application.commands.set(toRet, Storage("def", "read", "serverid"));
+        await client.application.commands.set(toRet, (client.isDev) ? (Storage("def", "read", "devserverid")) : (Storage("def", "read", "serverid")));
         res(inner);
     });
 }

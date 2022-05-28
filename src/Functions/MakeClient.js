@@ -26,7 +26,7 @@ function makeClient (type, msg, status) {
             activities: [
                 {
                     name: msg,
-                    type: ` ${type}`
+                    type: type
                 }
             ]
         },

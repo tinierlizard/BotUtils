@@ -30,7 +30,7 @@ function makeEmbed (int, options) {
         description: options.description,
         fields: options.fields || [],
     });
-    embed.setColor(getColor(color));
+    embed.setColor(getColor(options.color));
     embed.setFooter({text: getFooter(int, options.footer)});
 
     return embed;

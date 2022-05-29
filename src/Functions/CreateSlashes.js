@@ -40,7 +40,7 @@ async function CreateSlashes (client, directory) {
                             description: command.description,
                             type: 'CHAT_INPUT',
                             options: command.options || [],
-                            defaultPermission: command.defaultPermission
+                            defaultPermission: true
                         };
                         break
                     case 'CTX-USR':
@@ -49,7 +49,7 @@ async function CreateSlashes (client, directory) {
                             name: command.name,
                             description: null,
                             type: 'USER',
-                            defaultPermission: command.defaultPermission
+                            defaultPermission: true
                         };
                         break
                     case 'CTX-MSG':
@@ -58,7 +58,7 @@ async function CreateSlashes (client, directory) {
                             name: command.name,
                             description: null,
                             type: 'MESSAGE',
-                            defaultPermission: command.defaultPermission
+                            defaultPermission: true
                         };
                         break
                 }

@@ -8,6 +8,7 @@ exports.Update = require('./Functions/UpdateCmds');
 exports.Prompt = require('./Functions/Prompt');
 exports.GetOption = require('./Functions/GetOption');
 exports.PermCheck = require('./Functions/PermCheck');
+exports.RegisterEvents = require('./Functions/RegEvents');
 
 // Classes
 exports.Status = require('./Classes/Status');

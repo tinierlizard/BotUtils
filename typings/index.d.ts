@@ -128,3 +128,10 @@ export function Update(client: Client, dir: string):Promise<string>;
  * @param Perms An array of permission data
  */
 export function PermCheck(defPerm: boolean, interaction: Interaction, Perms?:Array<CommandPermissionData>):boolean;
+
+/**
+ * 
+ * @param client The bot's client
+ * @param directory A directory of all events to register
+ */
+export function RegisterEvents(client: Client, directory: string):Promise<Array<any>>;

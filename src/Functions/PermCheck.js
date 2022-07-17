@@ -11,20 +11,25 @@ function check (defPerm, interaction, Perms=[]) {
     if (defPerm) return true;
     if (Perms.length < 1) return false;
 
-    for (permData of Perms){
-        switch(permData.type){
-            case 'USER':
-                if (interaction.user.id == permData.id) return permData.permission;
-            break;
-            case 'ROLE':
-                for (role of interaction.member.roles.cache.values){
-                    if (role.id == permData.id) return permData.permission;
-                }
-            break;
+    return new Promise((res, rej) => {
+        for (permData of Perms){
+            switch(permData.type){
+                case 'USER':
+                    if (interaction.user.id == permData.id) {
+                        res( permData.permission )
+                    };
+                break;
+                case 'ROLE':
+                    let roles = interaction.member.roles.cache.map(role=>role);
+                    roles.forEach(role => {
+                        if (role.id == permData.id) {
+                            res( permData.permission )
+                        };
+                    });
+                break;
+            }
         }
-    }
-
-    return false;
+    });
 }
 
 module.exports = check;

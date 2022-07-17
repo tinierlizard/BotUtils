@@ -21,7 +21,7 @@ async function RegEvents(client, directory){
 
         for (let file of files){
             console.log(file);
-            let event = reacquire(file);
+            let event = reacquire(`${directory}/${file}`);
             console.log(event);
             if (event.enabled){
                 event.execute(client);

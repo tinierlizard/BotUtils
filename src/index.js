@@ -1,6 +1,6 @@
 // Functions
 exports.Store = require('./Functions/ManageStorage');
-exports.Client = require('./Functions/MakeClient');
+exports.MakeClient = require('./Functions/MakeClient');
 exports.CreateSlashes = require('./Functions/CreateSlashes');
 exports.BotMessage = require('./Functions/BotMessage');
 exports.Embed = require('./Functions/Embed');

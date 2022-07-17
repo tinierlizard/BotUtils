@@ -31,7 +31,7 @@ export interface Command{
 export interface Event{
     name: string,
     enabled: boolean,
-    exeucte(client: Client):null
+    execute(client: Client):null
 }
 
 // Classes \\

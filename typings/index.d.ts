@@ -28,6 +28,12 @@ export interface Command{
     execute(interaction : CommandInteraction | ContextMenuInteraction | ButtonInteraction, client : Client):null
 }
 
+export interface Event{
+    name: string,
+    enabled: boolean,
+    exeucte(client: Client):null
+}
+
 // Classes \\
 /** A class to handle logging commands to a certain channel in the server */
 export class CommandLogger {

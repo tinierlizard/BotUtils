@@ -16,13 +16,10 @@ async function RegEvents(client, directory){
     return new Promise( res => {
         client.events = new discord.Collection();
         directory = path.resolve(directory);
-        console.log(directory);
         let files = fs.readdirSync(directory);
 
         for (let file of files){
-            console.log(file);
             let event = reacquire(`${directory}/${file}`);
-            console.log(event);
             if (event.enabled){
                 event.execute(client);
             }

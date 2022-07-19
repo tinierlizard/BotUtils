@@ -133,7 +133,7 @@ export function Update(client: Client, dir: string):Promise<string>;
  * @param interaction The command interaction associated with this permission check
  * @param Perms An array of permission data
  */
-export function PermCheck(defPerm: boolean, interaction: Interaction, Perms?:Array<CommandPermissionData>):boolean;
+export function PermCheck(defPerm: boolean, interaction: Interaction, Perms?:Array<CommandPermissionData>):Promise<boolean>;
 
 /**
  * 

@@ -10,6 +10,7 @@ const { CommandInteraction } = require("discord.js");
 function check (defPerm, interaction, Perms=[]) {
     if (defPerm) return true;
     if (Perms.length < 1) return false;
+    console.log(Perms);
 
     for (permData of Perms){
         console.log(permData);
